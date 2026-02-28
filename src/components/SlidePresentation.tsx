@@ -96,7 +96,7 @@ const SlidePresentation = () => {
           <div className="relative z-10">
             {gamePhase === "slides" && (
               <div key={currentSlide} className="animate-fade-up text-center space-y-6">
-                <h1 className="font-display text-4xl md:text-5xl font-bold text-rose-gradient">
+                <h1 className="font-display text-4xl md:text-5xl font-bold text-rose-gradient leading-normal py-1">
                   {SLIDES[currentSlide].title}
                 </h1>
                 <p className="font-display text-lg italic text-rose-gold-light">
