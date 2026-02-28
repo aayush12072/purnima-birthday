@@ -9,21 +9,25 @@ const SLIDES = [
     title: "Hey Love ✨",
     subtitle: "Did you really think, I'd wish you normally?",
     body: "Had to put some non-monetary efforts to prove that I still love you",
+    nextLabel: "Let's Goo →",
   },
   {
     title: "Chapter One 🌹",
     subtitle: "The beginning",
     body: "Every great story starts with a single moment. Ours started beautifully.",
+    nextLabel: "Let's Goo →",
   },
   {
     title: "Chapter Two 💫",
     subtitle: "The growth",
     body: "We grew together, through laughter, through everything. That's what makes us, us.",
+    nextLabel: "Let's Goo →",
   },
   {
     title: "Almost There... 💕",
     subtitle: "Or are you?",
     body: "You're doing great. Keep going...",
+    nextLabel: "Continue →",
   },
 ];
 
@@ -106,25 +110,25 @@ const SlidePresentation = () => {
                   {SLIDES[currentSlide].body}
                 </p>
 
-                <div className="flex justify-center gap-4 pt-4">
+                <div className="flex flex-col items-center gap-3 pt-4">
+                  <button
+                    onClick={handleNext}
+                    className="px-8 py-3 rounded-lg font-body text-sm font-medium
+                               bg-primary text-primary-foreground rose-glow
+                               hover:scale-105 active:scale-95 transition-transform w-full max-w-[200px]"
+                  >
+                    {SLIDES[currentSlide].nextLabel}
+                  </button>
                   {currentSlide > 0 && (
                     <button
                       onClick={handlePrev}
                       className="px-6 py-3 rounded-lg font-body text-sm
                                  bg-secondary text-secondary-foreground
-                                 hover:bg-secondary/80 transition-colors"
+                                 hover:bg-secondary/80 transition-colors w-full max-w-[200px]"
                     >
                       ← Back
                     </button>
                   )}
-                  <button
-                    onClick={handleNext}
-                    className="px-8 py-3 rounded-lg font-body text-sm font-medium
-                               bg-primary text-primary-foreground rose-glow
-                               hover:scale-105 active:scale-95 transition-transform"
-                  >
-                    {currentSlide === SLIDES.length - 1 ? "Continue →" : "Let's Goo →"}
-                  </button>
                 </div>
 
                 <div className="flex justify-center gap-2 pt-2">
