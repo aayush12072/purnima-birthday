@@ -8,7 +8,7 @@ const SLIDES = [
   {
     title: "Hey Love ✨",
     subtitle: "Did you really think, I'd wish you normally?",
-    body: "Sit back and enjoy this little journey.",
+    body: "Had to put some non-monetary efforts to prove that I still love you",
   },
   {
     title: "Chapter One 🌹",
@@ -123,7 +123,7 @@ const SlidePresentation = () => {
                                bg-primary text-primary-foreground rose-glow
                                hover:scale-105 active:scale-95 transition-transform"
                   >
-                    {currentSlide === SLIDES.length - 1 ? "Continue →" : "Next →"}
+                    {currentSlide === SLIDES.length - 1 ? "Continue →" : "Let's Goo →"}
                   </button>
                 </div>
 
