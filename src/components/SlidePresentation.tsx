@@ -6,8 +6,8 @@ import SurpriseButton from "./SurpriseButton";
 /* ── CUSTOMIZATION: Slide titles and messages ── */
 const SLIDES = [
   {
-    title: "Hey You ✨",
-    subtitle: "I made something for you...",
+    title: "Hey Love ✨",
+    subtitle: "Did you really think, I'd wish you normally?",
     body: "Sit back and enjoy this little journey.",
   },
   {
