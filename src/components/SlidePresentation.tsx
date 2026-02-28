@@ -122,16 +122,14 @@ const SlidePresentation = () => {
                   >
                     {SLIDES[currentSlide].nextLabel}
                   </button>
-                  {currentSlide > 0 && (
-                    <button
-                      onClick={handlePrev}
-                      className="px-6 py-3 rounded-lg font-body text-sm
-                                 bg-secondary text-secondary-foreground
-                                 hover:bg-secondary/80 transition-colors w-full max-w-[200px]"
-                    >
-                      {SLIDES[currentSlide].backLabel}
-                    </button>
-                  )}
+                  <button
+                    onClick={handleNext}
+                    className="px-6 py-3 rounded-lg font-body text-sm
+                               bg-secondary text-secondary-foreground
+                               hover:bg-secondary/80 transition-colors w-full max-w-[200px]"
+                  >
+                    {SLIDES[currentSlide].backLabel}
+                  </button>
                 </div>
 
                 <div className="flex justify-center gap-2 pt-2">
