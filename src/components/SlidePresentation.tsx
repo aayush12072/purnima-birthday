@@ -16,18 +16,21 @@ const SLIDES = [
     subtitle: "The beginning",
     body: "Every great story starts with a single moment. Ours started beautifully.",
     nextLabel: "Let's Goo →",
+    backLabel: "← Let's Go",
   },
   {
     title: "Chapter Two 💫",
     subtitle: "The growth",
     body: "We grew together, through laughter, through everything. That's what makes us, us.",
     nextLabel: "Let's Goo →",
+    backLabel: "← Let's Go",
   },
   {
     title: "Almost There... 💕",
     subtitle: "Or are you?",
     body: "You're doing great. Keep going...",
     nextLabel: "Continue →",
+    backLabel: "← Let's Go",
   },
 ];
 
@@ -126,7 +129,7 @@ const SlidePresentation = () => {
                                  bg-secondary text-secondary-foreground
                                  hover:bg-secondary/80 transition-colors w-full max-w-[200px]"
                     >
-                      ← Back
+                      {SLIDES[currentSlide].backLabel}
                     </button>
                   )}
                 </div>
