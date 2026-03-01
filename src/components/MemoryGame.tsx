@@ -12,6 +12,8 @@ const CARD_IMAGES = [
   "/images/card8.jpg",
   "/images/card9.jpg",
   "/images/card10.jpg",
+  "/images/card11.jpg",
+  "/images/card12.jpg",
 ];
 
 interface MemoryGameProps {
@@ -26,12 +28,12 @@ interface Card {
   isMatched: boolean;
 }
 
-/* ── Heart shape layout for 20 cards ── */
+/* ── Heart shape layout for 24 cards ── */
 const HEART_POSITIONS: { row: number; col: number }[] = [
   { row: 0, col: 1 }, { row: 0, col: 2 }, { row: 0, col: 4 }, { row: 0, col: 5 },
   { row: 1, col: 0 }, { row: 1, col: 1 }, { row: 1, col: 2 }, { row: 1, col: 3 }, { row: 1, col: 4 }, { row: 1, col: 5 }, { row: 1, col: 6 },
-  { row: 2, col: 1 }, { row: 2, col: 2 }, { row: 2, col: 3 }, { row: 2, col: 4 }, { row: 2, col: 5 },
-  { row: 3, col: 2 }, { row: 3, col: 3 }, { row: 3, col: 4 },
+  { row: 2, col: 0 }, { row: 2, col: 1 }, { row: 2, col: 2 }, { row: 2, col: 3 }, { row: 2, col: 4 }, { row: 2, col: 5 }, { row: 2, col: 6 },
+  { row: 3, col: 1 }, { row: 3, col: 2 }, { row: 3, col: 3 }, { row: 3, col: 4 }, { row: 3, col: 5 },
   { row: 4, col: 3 },
 ];
 
