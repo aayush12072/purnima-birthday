@@ -125,8 +125,8 @@ const SlidePresentation = () => {
                   </button>
                   <button
                     onClick={handleNext}
-                    className="px-6 py-3 rounded-lg font-body text-sm
-                               bg-secondary text-accent
+                   className="px-6 py-3 rounded-lg font-body text-sm
+                               bg-secondary text-primary
                                hover:bg-secondary/80 transition-colors w-full max-w-[200px]"
                   >
                     {SLIDES[currentSlide].backLabel}
