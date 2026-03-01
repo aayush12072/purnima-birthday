@@ -1,7 +1,18 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 
-/* ── CUSTOMIZATION: Card emoji pairs (12 pairs = 24 cards) ── */
-const CARD_EMOJIS = ["💕", "🌹", "💎", "✨", "🦋", "🌸", "💫", "🎀", "💗", "🥂", "🌙", "💐"];
+/* ── CUSTOMIZATION: Card image pairs (10 pairs = 20 cards, will be 12 later) ── */
+const CARD_IMAGES = [
+  "/images/card1.jpg",
+  "/images/card2.jpg",
+  "/images/card3.jpg",
+  "/images/card4.jpg",
+  "/images/card5.jpg",
+  "/images/card6.jpg",
+  "/images/card7.jpg",
+  "/images/card8.jpg",
+  "/images/card9.jpg",
+  "/images/card10.jpg",
+];
 
 interface MemoryGameProps {
   onComplete: () => void;
@@ -10,17 +21,17 @@ interface MemoryGameProps {
 
 interface Card {
   id: number;
-  emoji: string;
+  image: string;
   isFlipped: boolean;
   isMatched: boolean;
 }
 
-/* ── Heart shape layout for 24 cards ── */
+/* ── Heart shape layout for 20 cards ── */
 const HEART_POSITIONS: { row: number; col: number }[] = [
   { row: 0, col: 1 }, { row: 0, col: 2 }, { row: 0, col: 4 }, { row: 0, col: 5 },
   { row: 1, col: 0 }, { row: 1, col: 1 }, { row: 1, col: 2 }, { row: 1, col: 3 }, { row: 1, col: 4 }, { row: 1, col: 5 }, { row: 1, col: 6 },
-  { row: 2, col: 0 }, { row: 2, col: 1 }, { row: 2, col: 2 }, { row: 2, col: 3 }, { row: 2, col: 4 }, { row: 2, col: 5 }, { row: 2, col: 6 },
-  { row: 3, col: 1 }, { row: 3, col: 2 }, { row: 3, col: 3 }, { row: 3, col: 4 }, { row: 3, col: 5 },
+  { row: 2, col: 1 }, { row: 2, col: 2 }, { row: 2, col: 3 }, { row: 2, col: 4 }, { row: 2, col: 5 },
+  { row: 3, col: 2 }, { row: 3, col: 3 }, { row: 3, col: 4 },
   { row: 4, col: 3 },
 ];
 
@@ -35,13 +46,13 @@ const MemoryGame = ({ onComplete, onStart }: MemoryGameProps) => {
   const flipSoundRef = useRef<AudioContext | null>(null);
 
   useEffect(() => {
-    const pairs = [...CARD_EMOJIS, ...CARD_EMOJIS];
+    const pairs = [...CARD_IMAGES, ...CARD_IMAGES];
     const shuffled = pairs
-      .map((emoji, i) => ({ emoji, sort: Math.random(), id: i }))
+      .map((image, i) => ({ image, sort: Math.random(), id: i }))
       .sort((a, b) => a.sort - b.sort)
       .map((item, index) => ({
         id: index,
-        emoji: item.emoji,
+        image: item.image,
         isFlipped: false,
         isMatched: false,
       }));
@@ -91,7 +102,7 @@ const MemoryGame = ({ onComplete, onStart }: MemoryGameProps) => {
 
       if (newFlipped.length === 2) {
         const [first, second] = newFlipped;
-        if (newCards[first].emoji === newCards[second].emoji) {
+        if (newCards[first].image === newCards[second].image) {
           setTimeout(() => {
             setCards((prev) =>
               prev.map((c, i) =>
@@ -100,7 +111,7 @@ const MemoryGame = ({ onComplete, onStart }: MemoryGameProps) => {
             );
             const newMatched = matchedPairs + 1;
             setMatchedPairs(newMatched);
-            if (newMatched === CARD_EMOJIS.length) {
+            if (newMatched === CARD_IMAGES.length) {
               setTimeout(onComplete, 600);
             }
           }, 500);
@@ -126,10 +137,9 @@ const MemoryGame = ({ onComplete, onStart }: MemoryGameProps) => {
         Match the Pairs 💕
       </h2>
       <p className="text-muted-foreground font-body text-sm">
-        {matchedPairs}/{CARD_EMOJIS.length} pairs found
+        {matchedPairs}/{CARD_IMAGES.length} pairs found
       </p>
 
-      {/* FIX #1: Heart grid — centered wrapper for mobile */}
       <div className="w-full flex justify-center items-center">
         <div
           style={{
@@ -159,7 +169,7 @@ const MemoryGame = ({ onComplete, onStart }: MemoryGameProps) => {
               <button
                 key={card.id}
                 onClick={() => handleCardClick(posIndex)}
-                className={`aspect-square rounded-lg font-body text-lg flex items-center justify-center
+                className={`aspect-square rounded-lg overflow-hidden flex items-center justify-center
                   transition-all duration-500 cursor-pointer select-none
                   ${
                     card.isMatched
@@ -170,7 +180,7 @@ const MemoryGame = ({ onComplete, onStart }: MemoryGameProps) => {
                   }`}
                 style={{
                   background: card.isFlipped || card.isMatched
-                    ? `linear-gradient(135deg, hsl(var(--rose-gold-dark) / 0.6), hsl(var(--rose-gold) / 0.4))`
+                    ? "transparent"
                     : `hsl(var(--secondary))`,
                   border: `1px solid ${
                     card.isFlipped || card.isMatched
@@ -182,16 +192,16 @@ const MemoryGame = ({ onComplete, onStart }: MemoryGameProps) => {
                 }}
                 disabled={card.isMatched}
               >
-                <span
-                  style={{
-                    transform: card.isFlipped || card.isMatched ? "rotateY(180deg)" : "rotateY(0deg)",
-                    opacity: card.isFlipped || card.isMatched ? 1 : 0,
-                    transition: "opacity 0.3s",
-                  }}
-                >
-                  {card.emoji}
-                </span>
-                {!card.isFlipped && !card.isMatched && (
+                {card.isFlipped || card.isMatched ? (
+                  <img
+                    src={card.image}
+                    alt="Memory card"
+                    className="w-full h-full object-cover rounded-lg"
+                    style={{
+                      transform: "rotateY(180deg)",
+                    }}
+                  />
+                ) : (
                   <span className="text-muted-foreground text-xs">✦</span>
                 )}
               </button>
