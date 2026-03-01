@@ -10,6 +10,7 @@ const SLIDES = [
     subtitle: "Did you really think, I'd wish you normally?",
     body: "Had to put some non-monetary efforts to prove that I still love you",
     nextLabel: "Let's Goo →",
+    backLabel: "← Let's Go",
   },
   {
     title: "Chapter One 🌹",
@@ -125,7 +126,7 @@ const SlidePresentation = () => {
                   <button
                     onClick={handleNext}
                     className="px-6 py-3 rounded-lg font-body text-sm
-                               bg-secondary text-secondary-foreground
+                               bg-secondary text-accent
                                hover:bg-secondary/80 transition-colors w-full max-w-[200px]"
                   >
                     {SLIDES[currentSlide].backLabel}
