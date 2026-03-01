@@ -177,7 +177,7 @@ const MemoryGame = ({ onComplete, onStart }: MemoryGameProps) => {
               <button
                 key={card.id}
                 onClick={() => handleCardClick(posIndex)}
-                className={`aspect-square rounded-lg overflow-hidden flex items-center justify-center
+                className={`aspect-square rounded-lg overflow-hidden flex items-center justify-center relative
                   transition-all duration-500 cursor-pointer select-none
                   ${
                     card.isMatched
@@ -200,16 +200,19 @@ const MemoryGame = ({ onComplete, onStart }: MemoryGameProps) => {
                 }}
                 disabled={card.isMatched}
               >
-                {card.isFlipped || card.isMatched ? (
-                  <img
-                    src={card.image}
-                    alt="Memory card"
-                    className="w-full h-full object-cover rounded-lg"
-                    style={{
-                      transform: "rotateY(180deg)",
-                    }}
-                  />
-                ) : (
+                <img
+                  src={card.image}
+                  alt="Memory card"
+                  loading="eager"
+                  decoding="async"
+                  className="w-full h-full object-cover rounded-lg absolute inset-0"
+                  style={{
+                    transform: card.isFlipped || card.isMatched ? "rotateY(180deg)" : "rotateY(180deg)",
+                    opacity: card.isFlipped || card.isMatched ? 1 : 0,
+                    transition: "opacity 0.3s",
+                  }}
+                />
+                {!card.isFlipped && !card.isMatched && (
                   <span className="text-muted-foreground text-xs">✦</span>
                 )}
               </button>
