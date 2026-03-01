@@ -48,6 +48,12 @@ const MemoryGame = ({ onComplete, onStart }: MemoryGameProps) => {
   const flipSoundRef = useRef<AudioContext | null>(null);
 
   useEffect(() => {
+    // Preload all images so they appear instantly when flipped
+    CARD_IMAGES.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+
     const pairs = [...CARD_IMAGES, ...CARD_IMAGES];
     const shuffled = pairs
       .map((image, i) => ({ image, sort: Math.random(), id: i }))
