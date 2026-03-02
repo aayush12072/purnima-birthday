@@ -27,11 +27,11 @@ const SLIDES = [
   backLabel: "I had some hope"
 },
 {
-  title: "Almost There... 💕",
+  title: "Happy              Birthdayy 💕",
   subtitle: "Or are you?",
   body: "You're doing great. Keep going...",
-  nextLabel: "Continue →",
-  backLabel: "I had some hope"
+  nextLabel: "Open it ASAP",
+  backLabel: "Is this a trick?"
 }];
 
 
