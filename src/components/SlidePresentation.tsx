@@ -27,7 +27,7 @@ const SLIDES = [
   backLabel: "I had some hope"
 },
 {
-  title: "Happy              Birthdayy 💕",
+  title: "Happy Birthday 💕",
   subtitle: "But but but, today is not about us, it is about youu!!",
   body: "So Purnima, here's your surprise for the day, my birthday girl!",
   nextLabel: "Open it ASAP",
