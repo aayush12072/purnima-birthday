@@ -29,7 +29,7 @@ const SLIDES = [
 {
   title: "Happy              Birthdayy 💕",
   subtitle: "But but but, today is not about us, it is about youu!!",
-  body: "You're doing great. Keep going...",
+  body: "So Purnima, here's your surprise for the day, my birthday girl!",
   nextLabel: "Open it ASAP",
   backLabel: "Is this a trick?"
 }];
