@@ -13,6 +13,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <audio autoPlay loop playsInline src="/audio/background.mp3" />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
