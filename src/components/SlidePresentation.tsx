@@ -28,7 +28,7 @@ const SLIDES = [
 },
 {
   title: "Happy              Birthdayy 💕",
-  subtitle: "Or are you?",
+  subtitle: "But but but, today is not about us, it is about youu!!",
   body: "You're doing great. Keep going...",
   nextLabel: "Open it ASAP",
   backLabel: "Is this a trick?"
