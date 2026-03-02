@@ -14,10 +14,10 @@ const SLIDES = [
   },
   {
     title: "Chapter One 🌹",
-    subtitle: "The beginning",
+    subtitle: "Was it destiny or was it Aayush... Why are we doing this?",
     body: "Every great story starts with a single moment. Ours started beautifully.",
     nextLabel: "Of Course not",
-    backLabel: "I had some hope",
+    backLabel: "Aayush...",
   },
   {
     title: "Chapter Two 💫",
