@@ -144,6 +144,11 @@ const MemoryGame = ({ onComplete, onStart }: MemoryGameProps) => {
       <h2 className="font-display text-2xl text-rose-gradient">
         Match the Pairs 💕
       </h2>
+      <p className="text-muted-foreground font-body text-xs text-center leading-relaxed max-w-[280px]">
+        It's been long since we last played memory game, let's break that sad streak
+        <br />
+        <span className="italic text-rose-gold-light">(Your b'day, I'll let you beat me this time)</span>
+      </p>
       <p className="text-muted-foreground font-body text-sm">
         {matchedPairs}/{CARD_IMAGES.length} pairs found
       </p>
