@@ -162,7 +162,7 @@ const SlidePresentation = () => {
                              bg-primary text-primary-foreground rose-glow
                              hover:scale-105 active:scale-95 transition-transform mt-4">
                 
-                  Fine... let's keep going 🙄
+                  Okay, not funny 🙄
                 </button>
               </div>
             }
