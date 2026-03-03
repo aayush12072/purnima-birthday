@@ -25,7 +25,7 @@ const SurpriseButton = () => {
     const padding = 12;
 
     const maxTx = (container.width - btn.width) / 2 - padding;
-    const maxTy = (container.height - btn.height) / 2 - padding;
+    const maxTy = (container.height - btn.height) / 2 - padding * 3;
 
     const quadrants = [
       { x: -maxTx * 0.85, y: -maxTy * 0.8 },
@@ -85,7 +85,7 @@ const SurpriseButton = () => {
     <div
       ref={containerRef}
       className="relative w-full flex flex-col items-center overflow-hidden"
-      style={{ height: "320px" }}
+      style={{ height: "280px" }}
     >
       {message && (
         <div className="text-center mb-4 animate-fade-up relative z-10">
