@@ -2,7 +2,7 @@ import { useState, useCallback, useRef, useEffect } from "react";
 
 /* ── CUSTOMIZATION: Surprise button text sequence ── */
 const CLICK_MESSAGES = [
-  "Haha got you the first time.",
+  "Haha - got you.",
   "Even though you don't drink – are you drunk?",
   "Okay okay – before you get mad – here it is.",
 ];
