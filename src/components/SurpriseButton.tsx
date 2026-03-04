@@ -8,7 +8,7 @@ const CLICK_MESSAGES = [
 ];
 
 /* ── CUSTOMIZATION: Final destination URL ── */
-const FINAL_URL = "https://www.instagram.com";
+const FINAL_URL = "https://www.instagram.com/reel/DQu1BWHkl-zNLqgaAFH_4EDTyR6gAOt05yUDEc0/?igsh=MWN5emcxejc0enptcw==";
 
 const SurpriseButton = () => {
   const [clickCount, setClickCount] = useState(0);
