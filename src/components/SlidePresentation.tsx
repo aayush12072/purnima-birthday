@@ -22,7 +22,7 @@ const SLIDES = [
 {
   title: "Chapter Two 💫",
   subtitle: "We've grown together ",
-  body: "You know there was a time when we were love birds, shy, seeing each other, blushing, in love love, while it might have been the honeymoon phase, I believe it never ended, we had our ups and downs, but now we are just closer, unfiltered, more besharam, stronger, I can call you moti and get away with it (maybe not), but still I like us now better 😋",
+  body: "You know there was a time when we were love birds, shy, seeing each other, blushing, in love love, while it might have been the honeymoon phase, I believe it never ended, we had our ups and downs, but now we are just closer, unfiltered, more besharam, stronger,\n I can call you moti and get away with it (maybe not), but still, I like us now better 😋",
   nextLabel: "Of Course not",
   backLabel: "I had some hope"
 },
