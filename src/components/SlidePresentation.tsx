@@ -15,7 +15,7 @@ const SLIDES = [
 {
   title: "Chapter One 🌹",
   subtitle: "Was it destiny or was it Aayush... Why are we doing this?",
-  body: "Funny it all started with CAT, and we both wanted to give CAT and do MBA during the initial phase of our career and now CAT isn't even part of our life, or maybe it's role was just to bring us closer, together.",
+  body: "Funny it all started with CAT, we both wanted to give CAT and do MBA during the initial phase of our career and now CAT isn't even part of our life, or maybe its role was just to bring us closer, together.",
   nextLabel: "Destiny",
   backLabel: "Aayush..."
 },
